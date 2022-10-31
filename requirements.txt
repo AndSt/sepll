@@ -1,0 +1,11 @@
+transformers[flax]==4.13
+flax
+jax
+
+scikit-learn
+numpy
+pandas
+joblib
+
+absl-py
+tqdm

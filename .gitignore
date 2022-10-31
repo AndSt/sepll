@@ -127,3 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# Andy's standards
+.env
+.idea
+experiments/
+scripts/
+config/local_config.cfg
+config/config.json
