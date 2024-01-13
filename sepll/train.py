@@ -179,7 +179,7 @@ def eval_step(state, batch):
 def test_model(state, embeddings, labels, Z):
     y_pred, y_truth = [], []
     Z_pred, Z_latent_pred, Z_truth = [], [], []
-
+    print(Z.shape)
     # we also add new truth vectors, as a debuggin run will only yield the first batch
     for batch in Z_eval_data_collator(X=embeddings, y=labels, Z=Z, batch_size=FLAGS.batch_size):
         l, z = batch.pop("labels"), batch.pop("z")

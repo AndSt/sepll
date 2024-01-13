@@ -20,7 +20,7 @@ def refine_Z_by_class(Z, T):
     sample = np.random.binomial(n=1, p=FLAGS.z_noise, size=Z.shape)
     Z_new = Z + sample * sample_classes
     np.clip(Z_new.round(), a_min=0, a_max=1)
-    return Z
+    return Z_new
 
 
 def refine_Z_full(Z, T):
@@ -64,7 +64,7 @@ def Z_eval_data_collator(X, y, Z, batch_size: int):
 
     num_its = 1 if flags.FLAGS.debug else y.shape[0] // batch_size
 
-    for i in tqdm(range(num_its)):
+    for i in tqdm(range(1 + num_its)):
         batch = {
             "input_ids": X[0][i * batch_size: (i + 1) * batch_size],
             "attention_mask": X[1][i * batch_size: (i + 1) * batch_size],
